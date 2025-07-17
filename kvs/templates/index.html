@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Simple KV Storage</title>
+</head>
+<body>
+    <h1>Simple KV Storage</h1>
+    <h4>Usage:</h4>
+    <ul>
+        <li><tt>GET /</tt> : Read this help page.</li>
+        <li><tt>GET /records/&lt;KEY&gt;</tt> : Get stored value. Will return error if not found.</li>
+        <li><tt>POST /records with JSON body {"key": "&lt;KEY&gt;", "value": "&lt;VALUE&gt;"}</tt> : Add new record to storage. Will return error if key already exists.</li>
+        <li><tt>POST /records/&lt;KEY&gt; with JSON body {"value": "&lt;VALUE&gt;"}</tt> : Update existing stored value. Will return error if not found.</li>
+        <li><tt>PUT /records/&lt;KEY&gt; with JSON body {"value": "&lt;VALUE&gt;"}</tt> : Add record to storage. Will silently overwrite value if already exists.</li>
+        <li><tt>DELETE /records/&lt;KEY&gt;</tt> : Delete stored value. Will return error if not found.</li>
+    </ul>
+</body>
+</html>
