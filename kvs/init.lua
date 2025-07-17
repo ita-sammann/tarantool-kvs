@@ -8,7 +8,7 @@ storage.create_storage()
 
 local handlers = require('handlers')
 
-local httpd = require('http.server').new('127.0.0.1', 3380, {
+local httpd = require('http.server').new('0.0.0.0', 3380, {
     header_timeout = 30
 })
 

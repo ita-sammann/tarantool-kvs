@@ -1,0 +1,16 @@
+services:
+  tarantool-kvs:
+    #image: "tarantool/tarantool:latest"
+    image: tarantool-kvs:local
+    build: .
+    container_name: "tarantool-kvs"
+    restart: "unless-stopped"
+    volumes:
+      #- "./kvs:/opt/tarantool"
+      - "./data:/var/lib/tarantool"
+    environment:
+      - "TT_APP_NAME=kvs"
+      - "TT_INSTANCE_NAME=instance001"
+      - "TT_CONFIG=/opt/tarantool/config.yaml"
+    ports:
+      - "3380:3380"

@@ -1,4 +1,7 @@
+.git/
+
 **/var/
 .rocks/
 
 data/
+
